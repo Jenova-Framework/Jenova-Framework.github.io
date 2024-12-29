@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jenova-framework.github.io/docs/articles</id>
+    <title>Projekt J.E.N.O.V.A Learning Center Blog</title>
+    <updated>2024-12-29T15:14:27.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://jenova-framework.github.io/docs/articles"/>
+    <subtitle>Projekt J.E.N.O.V.A Learning Center Blog</subtitle>
+    <icon>https://jenova-framework.github.io/docs/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Jenova Rocks!]]></title>
+        <id>https://jenova-framework.github.io/docs/articles/jenova-rocks</id>
+        <link href="https://jenova-framework.github.io/docs/articles/jenova-rocks"/>
+        <updated>2024-12-29T15:14:27.000Z</updated>
+        <summary type="html"><![CDATA[Test Post]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="test-post">Test Post<a href="https://jenova-framework.github.io/docs/articles/jenova-rocks#test-post" class="hash-link" aria-label="Direct link to Test Post" title="Direct link to Test Post">​</a></h2>
+<p>Test craps!</p>]]></content>
+        <author>
+            <name>Hamid.Memar</name>
+            <uri>https://github.com/TheAenema</uri>
+        </author>
+        <category label="Jenova Framework" term="Jenova Framework"/>
+        <category label="Jenova Runtime" term="Jenova Runtime"/>
+        <category label="Feature" term="Feature"/>
+    </entry>
+</feed>
