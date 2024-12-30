@@ -8,12 +8,13 @@
     <subtitle>Projekt J.E.N.O.V.A Learning Center Blog</subtitle>
     <icon>https://jenova-framework.github.io/docs/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[J.E.N.O.V.A Runtime Open-Sourced!]]></title>
+        <title type="html"><![CDATA[Jenova Runtime Open-Sourced!]]></title>
         <id>https://jenova-framework.github.io/docs/articles/jenova-rocks</id>
         <link href="https://jenova-framework.github.io/docs/articles/jenova-rocks"/>
         <updated>2024-12-29T15:14:27.000Z</updated>
         <summary type="html"><![CDATA[JenovaOpenSourced]]></summary>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" src="https://github.com/user-attachments/assets/425c8b3c-319e-4db8-9cf1-4bd56e09e3fc" alt="JenovaOpenSourced" class="img_ev3q"></p>
+<!-- -->
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-going-on">What's going on?<a href="https://jenova-framework.github.io/docs/articles/jenova-rocks#whats-going-on" class="hash-link" aria-label="Direct link to What's going on?" title="Direct link to What's going on?">​</a></h2>
 <p>For months, I've dedicated my time to develop and maintain Jenova Framework, a fully-featured C++ scripting solution for Godot. Now that it has reached a solid state I need to focus on my indie game development and I can no longer work on it as intensively. Therefore, I have decided to make it open-source and grant public access.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-next-for-jenova">What's next for Jenova?<a href="https://jenova-framework.github.io/docs/articles/jenova-rocks#whats-next-for-jenova" class="hash-link" aria-label="Direct link to What's next for Jenova?" title="Direct link to What's next for Jenova?">​</a></h2>
