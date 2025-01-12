@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jenova-framework.github.io/docs/articles</id>
     <title>Projekt J.E.N.O.V.A Learning Center Blog</title>
-    <updated>2024-12-29T15:14:27.000Z</updated>
+    <updated>2025-01-12T19:46:26.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jenova-framework.github.io/docs/articles"/>
     <subtitle>Projekt J.E.N.O.V.A Learning Center Blog</subtitle>
     <icon>https://jenova-framework.github.io/docs/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Documentation Codeblock Guide]]></title>
+        <id>https://jenova-framework.github.io/docs/articles/jenova-docs-codeblocks</id>
+        <link href="https://jenova-framework.github.io/docs/articles/jenova-docs-codeblocks"/>
+        <updated>2025-01-12T19:46:26.000Z</updated>
+        <author>
+            <name>Hamid.Memar</name>
+            <uri>https://github.com/TheAenema</uri>
+        </author>
+        <category label="Framework" term="Framework"/>
+        <category label="Framework" term="Framework"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Jenova Runtime Open-Sourced!]]></title>
         <id>https://jenova-framework.github.io/docs/articles/jenova-open-sourced</id>
