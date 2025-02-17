@@ -1,1 +1,1 @@
-*.jnvpkg filter=lfs diff=lfs merge=lfs -text
+*.jnvpkg.lfs filter=lfs diff=lfs merge=lfs -text
