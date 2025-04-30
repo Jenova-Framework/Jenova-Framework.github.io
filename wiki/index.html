@@ -6,9 +6,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <!-- Modify your wiki title here -->
-  <title>Static Wiki</title>
+  <title>Jenova Framework | User Wiki</title>
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="darkreader-lock">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,7 +28,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/ico" href="media/favicon.ico">
 
 </head>
 <body>
@@ -37,7 +38,7 @@
   <div class="row brand">
       <div class="container">
           <!-- Modify Your Brand Here -->
-          <a href=".">Static Wiki</a>
+          <a class="wiki_title" href=".">Project J.E.N.O.V.A | User Wiki</a>
       </div>
   </div>
   <nav class="row navbar">
@@ -45,12 +46,19 @@
           <div class="container">
               <div>
                   <ul class="nav">
-                      <li><button class="nav-button" id="all_pages">All Pages</button></li>
-                      <li><button class="nav-button" id="random_pages">Random Page</button></li>
+					<li>
+						<button class="nav-button" onclick="window.location.href='https://github.com/Jenova-Framework';">
+							Jenova Framework
+						</button>
+					</li>
+					<li>
+						<button class="nav-button" onclick="window.location.href='https://jenova-framework.github.io/docs/';">
+							Official Documentation
+						</button>
+					</li>
                   </ul>
                   <div id="nav-right">
                       <input id="search-input" type="text" placeholder="Search">
-                      <button id="toc-button" class="nav-button">ToC</button>
                   </div>
               </div>
           </div>

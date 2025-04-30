@@ -1,7 +1,7 @@
 //=============================================================================
 // configurations
-var file_all = 'all.txt';
-var file_index = 'index.md';
+var file_all = 'Pages.txt';
+var file_index = 'Welcome.md';
 
 //=============================================================================
 

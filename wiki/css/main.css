@@ -1,20 +1,56 @@
-/* override skeleton defults
- */
-body {
-    font-size: 2em;
+/* Fonts */
+@font-face {
+    font-family: 'Closeness';
+    src: url('/media/Closeness-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-ul {
-    list-style: circle;
+
+/* Main style */
+body {
+    font-size: 2em;
+	color: white;
+}
+
+#main ul {
+    padding-left: 30px !important;
 }
 
 ol {
     list-style: decimal;
 }
 
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #1b252f;
+}
+
+
+a:hover {
+    color: #66b0ff !important;
+	text-shadow: 0 0 8px, 0 0 6px;
+}
+a:visited {
+    color: #007bff;
+}
+
+.wiki_title
+{
+	color : #42DC8C !important;
+	font-family: Closeness !important;
+	text-shadow: 0 0 10px, 0 0 5px;
+}
+	
 /* Main content */
 #main {
-    background: #555;
+    background: #10101A;
 }
 
 #main .container {
@@ -26,7 +62,8 @@ ol {
 
 #main .container::before {
     content: '';
-    background: white;
+    background: #10101A;
+	color: white;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -37,46 +74,54 @@ ol {
 
 #main h2::before {
     content: '\00a0';
-    background: #444;
     position: absolute;
     left: -3rem;
     right: -3rem;
     z-index: -1;
-    box-shadow: 0 0 3px #444;
+}
+
+#main h1 {
+    color: #0cecb8;
+	text-shadow: 0 0 8px, 0 0 4px;
 }
 
 #main h2 {
-    color: #CBB7A7;
-    margin: -2rem 0 4rem 0;
-    padding: 4rem 0 0 0;
-    text-shadow: 1px 1px #333;
+    color: #0cecb8;
+    text-shadow: 0 0 8px, 0 0 4px;
+}
+
+#main h3 {
+    color: #0cecb8;
+    text-shadow: 0 0 8px, 0 0 4px;
 }
 
 code {
     font-size: 85%;
-    color: #555;
+    color: #42DC8C;
+	background-color : #0B0B10;
+	border-color : #42DC8C;
 }
 
 blockquote {
     margin: 1rem 0;
     padding-left: 1.5rem;
-    border-left: 5px solid #444;
+    border-left: 5px solid #42DC8C;
 }
 
 ::selection{
-    background: #555;
-    color: #EEE;
+    background: #42dc8c85;
+    color: white;
 }
 ::-moz-selection {
-    background: #555;
-    color: #EEE;
+    background: #42dc8c85;
+    color: white;
 }
 
 
 /* Header */
 
 .brand, footer {
-    background: #333;
+    background: #0B0B10;
     color: #EEE;
 }
 
@@ -92,13 +137,15 @@ blockquote {
 }
 
 .brand a:hover {
-    color: #1eaedb;
+    color: white;
 }
 
 /* nav bar */
 .nav {
     margin: 0;
     display: inline-block;
+	padding-top : 8px;
+	padding-bottom : 5px;
 }
 
 ul.nav li {
@@ -119,7 +166,7 @@ ul.nav li{
     text-decoration: none;
     display: inline-block;
     height: 100%;
-    color: #1EAEDB;
+    color: white;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -128,19 +175,19 @@ ul.nav li{
 #search-input {
     display: inline-block;
     margin: 0;
-    background: #555;
+    background: #10101A;
     border: none;
     width: 6em;
     transition: width .2s ease-in-out;
 }
 
 #search-input:focus{
-    background: #AAA;
+    background: #08081A;
     width: 12em;
 }
 
 .nav-control {
-    background: #444;
+    background: #42DC8C;
 }
 
 .nav-control .container div {
@@ -161,7 +208,7 @@ ul.nav li{
 /* nav button */
 .nav-button, .nav-button:focus {
     margin: 0;
-    color: #1EAEDB;
+    color: black;
     padding: 0 1em;
     transition: color .2s ease;
     border: none;
@@ -174,7 +221,7 @@ ul.nav li{
 /* nav result */
 
 .nav-result {
-    background: #eee;
+    background: #0B0B10;
     padding: 1rem 2em;
     max-height: 70vh;
     overflow-y: auto;
@@ -227,7 +274,7 @@ footer {
 }
 
 .toc-panel{
-    background: #eee;
+    background: #0B0B10;
     padding: 1em .5em .5em 3em;
     position: absolute;
     overflow-y: auto;
@@ -240,4 +287,10 @@ footer {
  * Utility class */
 .hide {
     display: none;
+}
+
+.hljs
+{
+	background: #2c3245 !important;
+	border-color: #2c2c44 !important;
 }
