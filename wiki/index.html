@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <!-- Modify your wiki title here -->
+  <title>Static Wiki</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.useso.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.1.0/styles/obsidian.min.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="row brand">
+      <div class="container">
+          <!-- Modify Your Brand Here -->
+          <a href=".">Static Wiki</a>
+      </div>
+  </div>
+  <nav class="row navbar">
+      <div class="nav-control">
+          <div class="container">
+              <div>
+                  <ul class="nav">
+                      <li><button class="nav-button" id="all_pages">All Pages</button></li>
+                      <li><button class="nav-button" id="random_pages">Random Page</button></li>
+                  </ul>
+                  <div id="nav-right">
+                      <input id="search-input" type="text" placeholder="Search">
+                      <button id="toc-button" class="nav-button">ToC</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="toc-wrapper" class="toc-panel hide">
+          <div id="toc">
+              <!--table of contents-->
+          </div>
+      </div>
+      <div id="search-result-wrapper" class="nav-result hide">
+          <div class="container">
+              <div id="search-result" class="search-result">
+                  <!--search result-->
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <div id="main" class="row">
+      <div class="container">
+          <div id="content" class="">
+              <!--for the main content-->
+          </div>
+      </div>
+  </div>
+
+  <footer id="footer row">
+      <!-- modify your footer here -->
+      <div class="container">
+          Powered by <a href="https://github.com/lotabout/static-wiki">Static Wiki</a>
+      </div>
+  </footer>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://cdn.bootcss.com/marked/0.3.5/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
