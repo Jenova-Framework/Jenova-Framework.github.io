@@ -10,4 +10,4 @@ Kindly adhere to the standard wiki format to ensure better organization and cons
 
 ## Wiki Database
 
-- [Building Jenova Runtime On Linux](/pages/TheAenema@BuildingOnLinux.md)
+- [Building Jenova Runtime On Linux](/wiki/pages/TheAenema@BuildingOnLinux.md)
