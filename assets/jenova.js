@@ -1,0 +1,40 @@
+const navBtns=document.querySelectorAll('.nav-btn');const pages=document.querySelectorAll('.page');const isMobile=()=>window.innerWidth<=705;let isFirstLoad=true;function navigateTo(pageId){if(history.pushState){history.pushState(null,null,`#${pageId}`);}else{window.location.hash=pageId;}
+if(!isMobile()){navBtns.forEach(b=>b.classList.remove('active'));const targetBtn=document.querySelector(`.nav-btn[data-page="${pageId}"]`);if(targetBtn)targetBtn.classList.add('active');pages.forEach(p=>{p.classList.remove('active');});const targetPage=document.getElementById(`page-${pageId}`);if(targetPage){targetPage.classList.add('active');targetPage.scrollTop=0;}}else{const targetPage=document.getElementById(`page-${pageId}`);if(targetPage){targetPage.style.display='block';targetPage.style.opacity='1';targetPage.style.position='relative';targetPage.style.pointerEvents='auto';targetPage.style.transform='none';if(!isFirstLoad){setTimeout(()=>{const titleElement=targetPage.querySelector('.panel-title, .glitch, h1, h2, .dev-info h2');const topBar=document.querySelector('.top-bar');const topBarHeight=topBar?topBar.getBoundingClientRect().height:60;if(titleElement){const rect=titleElement.getBoundingClientRect();const targetPosition=rect.top+window.pageYOffset-topBarHeight-10;window.scrollTo({top:targetPosition,behavior:'smooth'});}else{const rect=targetPage.getBoundingClientRect();const targetPosition=rect.top+window.pageYOffset-topBarHeight-10;window.scrollTo({top:targetPosition,behavior:'smooth'});}},150);}}}}
+window.navigateTo=navigateTo;navBtns.forEach(btn=>{btn.addEventListener('click',()=>{const page=btn.dataset.page;isFirstLoad=false;navigateTo(page);});});if(window.innerWidth<=705){window.addEventListener('scroll',()=>{let currentPage='intro';const topBar=document.querySelector('.top-bar');const topBarHeight=topBar?topBar.offsetHeight:60;const pages=document.querySelectorAll('.page');const navBtns=document.querySelectorAll('.nav-btn');pages.forEach(page=>{const rect=page.getBoundingClientRect();if(rect.top<=topBarHeight+50){currentPage=page.id.replace('page-','');}});navBtns.forEach(btn=>{btn.classList.toggle('active',btn.dataset.page===currentPage);});},{passive:true});}
+function handleHash(){let pageId=window.location.hash.replace('#','');if(!pageId||!document.getElementById(`page-${pageId}`)){pageId='intro';}
+navigateTo(pageId);isFirstLoad=false;}
+handleHash();window.addEventListener('hashchange',()=>{isFirstLoad=false;handleHash();});document.addEventListener('DOMContentLoaded',function(){const video=document.getElementById('video-bg');if(video){video.play().catch(function(){document.addEventListener('click',function(){video.play().catch(function(){});},{once:true});});}});(function(){const canvas=document.getElementById('features_canvas');if(!canvas||typeof Swiper==='undefined')return;const dataContainer=document.getElementById('features-data');if(!dataContainer){console.error('Features Data Container Not Found');return;}
+const featureItems=dataContainer.querySelectorAll('.feature-item');const featuresData=Array.from(featureItems).map(item=>({title:item.querySelector('h3')?.innerHTML||'',description:item.querySelector('p')?.innerHTML||'',image:item.querySelector('img')?.getAttribute('src')||''}));const slidesHTML=featuresData.map(f=>`
+        <div class="swiper-slide">
+            <div class="feat-card">
+                <div class="feat-img">
+                    <img src="${f.image}" alt="${f.title}">
+                    <div class="feat-overlay"></div>
+                </div>
+                <div class="feat-info">
+                    <h3>${f.title}</h3>
+                    <p>${f.description}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');canvas.innerHTML=`
+    <div class="swiper featSwiper">
+        <div class="swiper-wrapper">
+            ${slidesHTML}
+        </div>
+        <div class="swiper-nav-bottom">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+`;const swiper=new Swiper('.featSwiper',{slidesPerView:1,spaceBetween:20,centeredSlides:true,loop:true,allowTouchMove:false,simulateTouch:false,autoplay:{delay:3000,disableOnInteraction:true},pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},breakpoints:{768:{slidesPerView:2,spaceBetween:24},1024:{slidesPerView:3,spaceBetween:30}},on:{reachEnd:function(){setTimeout(()=>{this.slideTo(0,600);},4000);}}});swiper.on('slideChange',function(){if(this.isEnd&&!this.params.loop){setTimeout(()=>{this.slideTo(0);},4000);}});})();(function(){const quoteElement=document.getElementById('users-quote');if(!quoteElement)return;const quotesContainer=document.getElementById('quotes-data');if(!quotesContainer){console.error('Quotes Data Container Not Found');return;}
+const quoteItems=quotesContainer.querySelectorAll('.quote-item');const quotes=Array.from(quoteItems).map(item=>({text:item.textContent||''}));if(quotes.length===0)return;const MIN_SOLVE_TIME=200;const MAX_SOLVE_TIME=600;const FLICKER_INTERVAL=50;let currentIndex=0;let displayTimeout=null;let isSolving=false;const matrixChars=['ｱ','ｲ','ｳ','ｴ','ｵ','ｶ','ｷ','ｸ','ｹ','ｺ','ｻ','ｼ','ｽ','ｾ','ｿ','ﾀ','ﾁ','ﾂ','ﾃ','ﾄ','ﾅ','ﾆ','ﾇ','ﾈ','ﾉ','ﾊ','ﾋ','ﾌ','ﾍ','ﾎ','ﾏ','ﾐ','ﾑ','ﾒ','ﾓ','ﾔ','ﾕ','ﾖ','ﾗ','ﾘ','ﾙ','ﾚ','ﾛ','ﾜ','ｦ','ﾝ','!','@','#','$','%'];function getRandomMatrixChar(){return matrixChars[Math.floor(Math.random()*matrixChars.length)];}
+function solveCharacter(charElement,targetChar,callback){const solveTime=MIN_SOLVE_TIME+Math.random()*(MAX_SOLVE_TIME-MIN_SOLVE_TIME);let elapsed=0;function flicker(){if(elapsed<solveTime){charElement.textContent=getRandomMatrixChar();elapsed+=FLICKER_INTERVAL;setTimeout(flicker,FLICKER_INTERVAL);}else{charElement.textContent=targetChar;if(callback)callback();}}
+flicker();}
+function displayQuote(quote,callback){const fullText=quote.text;isSolving=true;quoteElement.innerHTML='';const chars=fullText.split('');const charElements=[];let solvedCount=0;chars.forEach((char)=>{const span=document.createElement('span');span.textContent=getRandomMatrixChar();quoteElement.appendChild(span);charElements.push(span);});charElements.forEach((el,index)=>{const targetChar=chars[index];const startDelay=Math.random()*300;setTimeout(()=>{solveCharacter(el,targetChar,function(){solvedCount++;if(solvedCount===charElements.length){isSolving=false;if(callback)callback();}});},startDelay);});}
+function showNextQuote(){if(displayTimeout){clearTimeout(displayTimeout);displayTimeout=null;}
+const quote=quotes[currentIndex];displayQuote(quote,function(){displayTimeout=setTimeout(function(){currentIndex=(currentIndex+1)%quotes.length;showNextQuote();},5000);});}
+showNextQuote();quoteElement.addEventListener('mouseenter',function(){if(displayTimeout){clearTimeout(displayTimeout);displayTimeout=null;}});quoteElement.addEventListener('mouseleave',function(){if(!isSolving){displayTimeout=setTimeout(function(){currentIndex=(currentIndex+1)%quotes.length;showNextQuote();},2000);}});})();function fixShellGap(){if(window.innerWidth>705)return;const shell=document.querySelector('.shell');if(!shell)return;const computedHeight=shell.scrollHeight;const visualHeight=shell.getBoundingClientRect().height;const wastedSpace=computedHeight-visualHeight;shell.style.marginBottom=`-${wastedSpace}px`;}
+if(window.innerWidth<=705){const shell=document.querySelector('.shell');if(shell){const observer=new ResizeObserver(()=>fixShellGap());observer.observe(shell);}}
+window.addEventListener('resize',()=>{if(window.innerWidth>705){const shell=document.querySelector('.shell');if(shell)shell.style.marginBottom='';}else{fixShellGap();}});if(window.innerWidth<=705){const viewport=document.querySelector('meta[name=viewport]');if(viewport){const scale=window.innerWidth/705;viewport.content=`width=705, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`;}}
